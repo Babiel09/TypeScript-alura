@@ -1,3 +1,8 @@
-import { Negociacao } from './models/negociacao.js';
-const negociacao = new Negociacao(new Date(), 10, 100);
-console.log(negociacao.valor);
+import { NegociacaoController } from './controllers/controller-nec.js';
+const controller = new NegociacaoController;
+//Criando o formulário:
+const form = document.querySelector('.form-group');
+form.addEventListener('sumbit', event => {
+    event.preventDefault();
+    controller.soma();
+});
