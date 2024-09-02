@@ -1,4 +1,4 @@
-import { Negociacao } from "../models/negociacao";
+import { Negociacao } from "../models/negociacao.js";
 export class NegociacaoController {
     constructor() {
         //Armazenando os valores dentro dos inputs
@@ -8,6 +8,11 @@ export class NegociacaoController {
     }
     //Criando método para add o valor que tem lá dentro com o console.log:
     soma() {
-        const negociacao = new Negociacao(this._inputData.value, this._inputQuantidade.value, this._inputValor.value);
+        const exp = /-/g;
+        const data = new Date(this._inputData.value.replace(exp, ','));
+        const quantidade = parseInt(this._inputQuantidade.value);
+        const valor = parseFloat(this._inputValor.value);
+        const negocia = new Negociacao(data, quantidade, valor);
+        console.group(negocia);
     }
 }
