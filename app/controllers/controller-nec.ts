@@ -13,7 +13,7 @@ export class NegociacaoController{
     }
 
     //Criando método para add o valor que tem lá dentro com o console.log:
-    soma(){
+    Dadosnegociacao(): void{
         const exp = /-/g
         const data = new Date(this._inputData.value.replace(exp, ','))
         const quantidade = parseInt(this._inputQuantidade.value)
