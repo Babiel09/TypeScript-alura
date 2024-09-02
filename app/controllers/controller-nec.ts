@@ -27,5 +27,6 @@ export class NegociacaoController{
         this._inputData.value = ''
         this._inputQuantidade.value = ''
         this._inputValor.value = ''
+        this._inputData.focus()
     }
 }
