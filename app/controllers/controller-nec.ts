@@ -15,8 +15,8 @@ export class NegociacaoController{
     //Criando método para add o valor que tem lá dentro com o console.log:
     soma(){
         const negociacao = new Negociacao(
-            this._inputData.value
-            this._inputQuantidade.value
+            this._inputData.value,
+            this._inputQuantidade.value,
             this._inputValor.value
         )
     }
