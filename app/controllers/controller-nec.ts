@@ -19,6 +19,13 @@ export class NegociacaoController{
         const quantidade = parseInt(this._inputQuantidade.value)
         const valor = parseFloat(this._inputValor.value)
         const negocia = new Negociacao(data, quantidade, valor)
-        console.group(negocia)
-    } 
+        console.group(negocia);
+        this.limparForm()
+    }
+    
+    limparForm(): void{
+        this._inputData.value = ''
+        this._inputQuantidade.value = ''
+        this._inputValor.value = ''
+    }
 }
