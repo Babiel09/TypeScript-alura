@@ -1,9 +1,11 @@
+import { Negociacoes } from "../models/lista-negociacoes/lista-negocio.js"
 import { Negociacao } from "../models/negociacao.js"
 
 export class NegociacaoController{
     private _inputData: HTMLInputElement
     private _inputQuantidade: HTMLInputElement
-    private _inputValor: HTMLInputElement   
+    private _inputValor: HTMLInputElement  
+    private _negociacoes = new Negociacoes()
     
     constructor(){
         //Armazenando os valores dentro dos inputs
@@ -12,15 +14,23 @@ export class NegociacaoController{
         this._inputValor = document.querySelector('#valor')
     }
 
+    //Soma:
+    adiciona(): void {
+        const negociacao = this.dadosNegociacao()
+        this._negociacoes.adiciona(negociacao)
+        console.log(this._negociacoes.lista())
+        this._negociacoes.lista().pop
+    }
+
     //Criando método para add o valor que tem lá dentro com o console.log:
-    Dadosnegociacao(): void{
+    dadosNegociacao(): Negociacao{
         const exp = /-/g
         const data = new Date(this._inputData.value.replace(exp, ','))
         const quantidade = parseInt(this._inputQuantidade.value)
         const valor = parseFloat(this._inputValor.value)
         const negocia = new Negociacao(data, quantidade, valor)
-        console.group(negocia);
         this.limparForm()
+        return negocia
     }
     
     limparForm(): void{
