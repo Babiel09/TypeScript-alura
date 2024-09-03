@@ -17,9 +17,6 @@ export class NegociacaoController{
     //Soma:
     adiciona(): void {
         const negociacao = this.dadosNegociacao()
-        this._negociacoes.adiciona(negociacao)
-        console.log(this._negociacoes.lista())
-        this._negociacoes.lista().pop
     }
 
     //Criando método para add o valor que tem lá dentro com o console.log:
@@ -29,8 +26,11 @@ export class NegociacaoController{
         const quantidade = parseInt(this._inputQuantidade.value)
         const valor = parseFloat(this._inputValor.value)
         const negocia = new Negociacao(data, quantidade, valor)
+        this._negociacoes.lista()
         this.limparForm()
+        console.log(negocia)
         return negocia
+        
     }
     
     limparForm(): void{
