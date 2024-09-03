@@ -11,17 +11,21 @@ form.addEventListener('submit', event=>{
 
 //Abaixo está meu estudo de matemática:
 
-//f(x) = 2x + a
+//f(x) = 6x + a
 
-function funcaoPrimeiroGrau(x: number, a:number):number{
+function funcaoDoprimeroGrau(x:number, a:number):number{
     return 2*x+a
 };
 
-var a = 60;
+var a = 90;
 
-const testedeX = [6, -8, 7];
+//Eu poderia só fazer a variável com x, mas prefiro complicar hehe
 
-testedeX.forEach(x=>{
-    const resultado = funcaoPrimeiroGrau(a,x)
+const todososX = [3, 89, 2];
+
+todososX.forEach(x=>{
+    const resultado = funcaoDoprimeroGrau(a,x)
     console.log(resultado)
-})
+});
+
+

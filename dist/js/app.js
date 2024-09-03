@@ -7,14 +7,15 @@ form.addEventListener('submit', event => {
     controller.dadosNegociacao();
 });
 //Abaixo está meu estudo de matemática:
-//f(x) = 2x + a
-function funcaoPrimeiroGrau(x, a) {
+//f(x) = 6x + a
+function funcaoDoprimeroGrau(x, a) {
     return 2 * x + a;
 }
 ;
-var a = 60;
-const testedeX = [6, -8, 7];
-testedeX.forEach(x => {
-    const resultado = funcaoPrimeiroGrau(a, x);
+var a = 90;
+//Eu poderia só fazer a variável com x, mas prefiro complicar hehe
+const todososX = [3, 89, 2];
+todososX.forEach(x => {
+    const resultado = funcaoDoprimeroGrau(a, x);
     console.log(resultado);
 });
