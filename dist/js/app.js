@@ -6,16 +6,3 @@ form.addEventListener('submit', event => {
     event.preventDefault();
     controller.dadosNegociacao();
 });
-//Abaixo está meu estudo de matemática:
-//f(x) = 6x + a
-function funcaoDoprimeroGrau(x, a) {
-    return 6 * x + a;
-}
-;
-var a = 90;
-//Eu poderia só fazer a variável com x, mas prefiro complicar hehe
-const todososX = [3, 89, 2];
-todososX.forEach(x => {
-    const resultado = funcaoDoprimeroGrau(a, x);
-    console.log(resultado);
-});
