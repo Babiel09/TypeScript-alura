@@ -14,7 +14,7 @@ form.addEventListener('submit', event=>{
 //f(x) = 6x + a
 
 function funcaoDoprimeroGrau(x:number, a:number):number{
-    return 2*x+a
+    return 6*x+a
 };
 
 var a = 90;

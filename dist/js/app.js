@@ -9,7 +9,7 @@ form.addEventListener('submit', event => {
 //Abaixo está meu estudo de matemática:
 //f(x) = 6x + a
 function funcaoDoprimeroGrau(x, a) {
-    return 2 * x + a;
+    return 6 * x + a;
 }
 ;
 var a = 90;
