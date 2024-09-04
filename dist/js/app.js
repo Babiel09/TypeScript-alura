@@ -1,4 +1,5 @@
 import { NegociacaoController } from './controllers/controller-nec.js';
+//Importando o controller   
 const controller = new NegociacaoController;
 //Criando o formulário:
 const form = document.querySelector('.form');

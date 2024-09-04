@@ -1,5 +1,5 @@
 import { NegociacaoController } from './controllers/controller-nec.js';
-
+//Importando o controller   
 const controller = new NegociacaoController
 //Criando o formulário:
 
@@ -8,5 +8,3 @@ form.addEventListener('submit', event=>{
     event.preventDefault()
     controller.dadosNegociacao()
 })
-
-
