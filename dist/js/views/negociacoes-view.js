@@ -17,18 +17,15 @@ export class Negociacoesview {
                     <th>VALOR</th>
                 </tr>
             </thead>
-            <tbody>
+            <ul>
             ${model.lista().map(negociacao => {
             return `
-                        <tr>
-                            <td>${new Intl.DateTimeFormat().format(negociacao.data)}</td>
-                            <td>${negociacao.quantidade}</td>
-                            <td>${negociacao.valor}</td>
-                        </tr>
+                            <li>${new Intl.DateTimeFormat().format(negociacao.data)}</li>
+                            <li>${negociacao.quantidade}</li>
+                            <li>${negociacao.valor}</li>
                         `;
-        }).join('')}</th>
-                </tr>
-            </tbody>
+        }).join('')}
+            <ul>
         </table>
         `;
     }
