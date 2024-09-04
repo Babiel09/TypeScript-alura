@@ -9,6 +9,7 @@ export class NegociacaoController{
     private negociacoes = new Negociacoes()
     //Aqui agora no controller eu vou colocar o elemento do D.O.M. que eu vou modificar
     private view = new Negociacoesview('#negociacoes-view')//O id da minha diva que será modificada
+    //Agora vou colocar aqui dentro um elemento privado para o meu controller executar o "NegociacaoFeita":
     
     constructor(){
         //Armazenando os valores dentro dos inputs
@@ -24,6 +25,7 @@ export class NegociacaoController{
         this.negociacoes.adiciona(negociacao)
         this.view.update(this.negociacoes)
         this.limparForm()
+        
     }
 
     //Criando método para add o valor que tem lá dentro com o console.log:
@@ -33,7 +35,6 @@ export class NegociacaoController{
         const quantidade = parseInt(this.inputQuantidade.value)
         const valor = parseFloat(this.inputValor.value)
         const negocia = new Negociacao(data, quantidade, valor)
-        this.negociacoes.lista()
         console.log(negocia)
         return negocia
         

@@ -2,6 +2,7 @@ import { Negociacoes } from "../models/lista-negociacoes/lista-negocio.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoesview } from "../views/negociacoes-view.js";
 export class NegociacaoController {
+    //Agora vou colocar aqui dentro um elemento privado para o meu controller executar o "NegociacaoFeita":
     constructor() {
         this.negociacoes = new Negociacoes();
         //Aqui agora no controller eu vou colocar o elemento do D.O.M. que eu vou modificar
@@ -26,7 +27,6 @@ export class NegociacaoController {
         const quantidade = parseInt(this.inputQuantidade.value);
         const valor = parseFloat(this.inputValor.value);
         const negocia = new Negociacao(data, quantidade, valor);
-        this.negociacoes.lista();
         console.log(negocia);
         return negocia;
     }

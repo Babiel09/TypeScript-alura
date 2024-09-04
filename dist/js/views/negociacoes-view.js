@@ -9,30 +9,21 @@ export class Negociacoesview {
     visualizando(model) {
         //Retornando dentro do método uma declaração de como deve ser a minha tabela.
         return `
-        <table class= "table table-hover table-bored">
-            <thead>
-                <tr>
-                    <th>DATA</th>
-                    <th>QUANTIDADE</th>
-                    <th>VALOR</th>
-                </tr>
-            </thead>
-            <ul>
-            ${model.lista().map(negociacao => {
+                <ul>
+                ${model.lista().map(negociacao => {
             return `
-                            <li>${new Intl.DateTimeFormat().format(negociacao.data)}</li>
-                            <li>${negociacao.quantidade}</li>
-                            <li>${negociacao.valor}</li>
-                        `;
+                                <li>${new Intl.DateTimeFormat().format(negociacao.data)}</li>
+                                <br>
+                                <li>${negociacao.quantidade}</li>
+                                <br>
+                                <li>${negociacao.valor}</li>
+                            `;
         }).join('')}
-            <ul>
-        </table>
-        `;
+                </ul>
+            `;
     }
     //Para fazer com que o visualizando se atualize eu crio o seguinte método:
     update(model) {
-        const template = this.visualizando(model);
-        console.log(template);
-        this.elemento.innerHTML = template;
+        let template = this.visualizando(model);
     }
 }
