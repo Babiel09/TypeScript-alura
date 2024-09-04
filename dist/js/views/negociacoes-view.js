@@ -21,7 +21,7 @@ export class NegociacoesView extends View {
                                 ${negociacao.quantidade}
                             </td>
                             <td>
-                                ${negociacao.valor}
+                                ${"R$" + negociacao.valor}
                             </td>
                         </tr>
                     `;
