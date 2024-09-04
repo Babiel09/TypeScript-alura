@@ -1,11 +1,8 @@
-import { NegociacaoController } from './controllers/controller-nec.js';
-//Importando o controller   
-const controller = new NegociacaoController
-//Criando o formulário:
+import { NegociacaoController } from './controllers/negociacao-controller.js';
 
-const form = document.querySelector('.form')
-form.addEventListener('submit', event=>{
-    event.preventDefault()
-    controller.dadosNegociacao()
-    alert("Negociação efetuada")
-})
+const controller = new NegociacaoController();
+const form = document.querySelector('.form');
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    controller.adiciona();
+});
