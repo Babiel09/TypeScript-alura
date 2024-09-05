@@ -16,15 +16,14 @@ export class NegociacaoController {
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
         this.negociacoesView.update(this.negociacoes);
-    }
+    };
 
     adiciona(): void {
         const negociacao = this.criaNegociacao();
         this.negociacoes.adiciona(negociacao);
-        this.negociacoesView.update(this.negociacoes);
-        this.mensagemView.update('Negociação adicionada com sucesso');
+        this.atualizaView();
         this.limparFormulario();
-    }
+    };
 
     criaNegociacao(): Negociacao {
         const exp = /-/g;
@@ -32,12 +31,19 @@ export class NegociacaoController {
         const quantidade = parseInt(this.inputQuantidade.value);
         const valor = parseFloat(this.inputValor.value);
         return new Negociacao(date, quantidade, valor);
-    }
+    };
 
     limparFormulario(): void {
         this.inputData.value = '';
         this.inputQuantidade.value = '';
         this.inputValor.value = '';
         this.inputData.focus();
-    }
+    };
+
+        //Método atualizaView chama o método update para todas as views:
+        private atualizaView(): void{
+            this.negociacoesView.update(this.negociacoes);           //Dando update na view de negocios
+            this.mensagemView.update('Negociação adicionada com sucesso');       //Dando update na view de mensagem
+    
+        };
 }

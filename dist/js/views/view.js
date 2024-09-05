@@ -7,3 +7,4 @@ export class View {
         this.elemento.innerHTML = template;
     }
 }
+;
