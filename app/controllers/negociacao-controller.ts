@@ -25,15 +25,14 @@ export class NegociacaoController {
             this.inputQuantidade.value,
             this.inputValor.value
             );
-        if(this.diaUtil(new Date(this.inputData.value))){ //Aqui precisa pegar o valor da data para o código funcionar
+        if(this.diaUtil(negociacao.data)){ //Aqui precisa pegar o valor da data para o código funcionar
             this.negociacoes.adiciona(negociacao);
             this.atualizaView();
             this.limparFormulario();
             alert(202)
             return; 
         }else{
-            this.mensagemView.update
-            ("Negociações só podem ser feitas em dias úteis.") , alert("ERROR 401")
+            this.mensagemView.update("Negociações só podem ser feitas em dias úteis.");
             //Uso o update para facilitar meu processo
         };
     };
