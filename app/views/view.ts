@@ -15,5 +15,4 @@ export abstract class View<T> {
     //Com o "protect abstract" somente as filhas dessa classe mãe podem acessar o template, 
     //o grande problema que aqui na classe mãe o template está protegido, mas na classe filha não.
     //Para evitar isso eu devo colocar protected em todas as classes filhas
-
 };

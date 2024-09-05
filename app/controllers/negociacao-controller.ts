@@ -2,6 +2,7 @@ import { Negociacao } from '../models/negociacao.js';
 import { Negociacoes } from '../models/negociacoes.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
+import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
@@ -10,8 +11,6 @@ export class NegociacaoController {
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView');
     private mensagemView = new MensagemView('#mensagemView');
-    private SABADO = 6;
-    private DOMINGO = 0;
 
     constructor() {
         this.inputData = document.querySelector('#data');
@@ -36,7 +35,7 @@ export class NegociacaoController {
     };
     //Para tornar legível a parte do if, eu vou fazer:
     private diaUtil(data: Date){
-        return data.getDay() > this.DOMINGO && data.getDay() < this.SABADO //Esse método vai me retornar uma booleana (true or false)
+        return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SÁBADO //Esse método vai me retornar uma booleana (true or false)
     }
 
     private criaNegociacao(): Negociacao {
