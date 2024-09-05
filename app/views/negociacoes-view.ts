@@ -26,11 +26,11 @@ export class NegociacoesView extends View<Negociacoes> {
                             <td>
                                 ${"R$"+this.formatarValor(negociacao.valor)}
                             </td>
-                        </tr>
+                        </tr>   
                     `;
                 }).join('')}
             </tbody>
-        </table>
+        </table>    
         `;
     }
     //Diminuindo o tamnho do código:

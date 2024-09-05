@@ -1,10 +1,17 @@
 export class View {
-    constructor(seletor) {
+    constructor(seletor, escapar) {
+        this.escapar = false;
         this.elemento = document.querySelector(seletor);
     }
+    ;
     update(model) {
-        const template = this.template(model);
+        let template = this.template(model);
+        if (this.escapar) {
+            this.escapar = this.escapar;
+        }
+        ;
         this.elemento.innerHTML = template;
     }
+    ;
 }
 ;

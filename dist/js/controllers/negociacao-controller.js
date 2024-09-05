@@ -6,7 +6,7 @@ import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
-        this.negociacoesView = new NegociacoesView('#negociacoesView');
+        this.negociacoesView = new NegociacoesView('#negociacoesView', true);
         this.mensagemView = new MensagemView('#mensagemView');
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
@@ -16,7 +16,7 @@ export class NegociacaoController {
     ;
     adiciona() {
         const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
-        if (this.diaUtil && negociacao.data.getFullYear() >= 1990) {
+        if (this.diaUtil(new Date(this.inputData.value))) { //Aqui precisa pegar o valor da data para o código funcionar
             this.negociacoes.adiciona(negociacao);
             this.atualizaView();
             this.limparFormulario();
@@ -24,7 +24,7 @@ export class NegociacaoController {
             return;
         }
         else {
-            this.mensagemView.update("Negociações só podem ser feitas em dias úteis, com em anos recentes(depois dos anos 90)."), alert("ERROR 401");
+            this.mensagemView.update("Negociações só podem ser feitas em dias úteis."), alert("ERROR 401");
             //Uso o update para facilitar meu processo
         }
         ;
@@ -32,7 +32,7 @@ export class NegociacaoController {
     ;
     //Para tornar legível a parte do if, eu vou fazer:
     diaUtil(data) {
-        return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SÁBADO; //Esse método vai me retornar uma booleana (true or false)
+        return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO; //Esse método vai me retornar uma booleana (true or false)
     }
     limparFormulario() {
         this.inputData.value = '';
