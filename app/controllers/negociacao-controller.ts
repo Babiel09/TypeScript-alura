@@ -30,7 +30,7 @@ export class NegociacaoController {
             this.atualizaView();
             this.limparFormulario();
             alert(202)
-            return;
+            return; 
         }else{
             this.mensagemView.update
             ("Negociações só podem ser feitas em dias úteis, com em anos recentes(depois dos anos 90).") , alert("ERROR 401")
