@@ -15,7 +15,7 @@ export class NegociacaoController {
     }
     ;
     adiciona() {
-        const negociacao = this.criaNegociacao();
+        const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
         if (this.diaUtil && negociacao.data.getFullYear() >= 1990) {
             this.negociacoes.adiciona(negociacao);
             this.atualizaView();
@@ -34,14 +34,6 @@ export class NegociacaoController {
     diaUtil(data) {
         return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SÁBADO; //Esse método vai me retornar uma booleana (true or false)
     }
-    criaNegociacao() {
-        const exp = /-/g;
-        const date = new Date(this.inputData.value.replace(exp, ','));
-        const quantidade = parseInt(this.inputQuantidade.value);
-        const valor = parseFloat(this.inputValor.value);
-        return new Negociacao(date, quantidade, valor);
-    }
-    ;
     limparFormulario() {
         this.inputData.value = '';
         this.inputQuantidade.value = '';
