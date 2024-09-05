@@ -21,7 +21,7 @@ export class NegociacaoController {
 
     public adiciona(): void {
         const negociacao = this.criaNegociacao();
-        if(this.diaUtil && negociacao.data.getFullYear() > 1990){
+        if(this.diaUtil && negociacao.data.getFullYear() >= 1990){
             this.negociacoes.adiciona(negociacao);
             this.atualizaView();
             this.limparFormulario();
@@ -29,7 +29,7 @@ export class NegociacaoController {
             return;
         }else{
             this.mensagemView.update
-            ("Negociações só podem ser feitas em dias úteis, ou em anos recentes!") , alert("ERROR 401")
+            ("Negociações só podem ser feitas em dias úteis, com em anos recentes(depois dos anos 90).") , alert("ERROR 401")
             //Uso o update para facilitar meu processo
         };
     };
