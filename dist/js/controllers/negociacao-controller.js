@@ -7,6 +7,8 @@ export class NegociacaoController {
         this.negociacoes = new Negociacoes();
         this.negociacoesView = new NegociacoesView('#negociacoesView');
         this.mensagemView = new MensagemView('#mensagemView');
+        this.SABADO = 6;
+        this.DOMINGO = 0;
         this.inputData = document.querySelector('#data');
         this.inputQuantidade = document.querySelector('#quantidade');
         this.inputValor = document.querySelector('#valor');
@@ -15,11 +17,24 @@ export class NegociacaoController {
     ;
     adiciona() {
         const negociacao = this.criaNegociacao();
-        this.negociacoes.adiciona(negociacao);
-        this.atualizaView();
-        this.limparFormulario();
+        if (this.diaUtil && negociacao.data.getFullYear() > 1990) {
+            this.negociacoes.adiciona(negociacao);
+            this.atualizaView();
+            this.limparFormulario();
+            alert(202);
+            return;
+        }
+        else {
+            this.mensagemView.update("Negociações só podem ser feitas em dias úteis, ou em anos recentes!"), alert("ERROR 401");
+            //Uso o update para facilitar meu processo
+        }
+        ;
     }
     ;
+    //Para tornar legível a parte do if, eu vou fazer:
+    diaUtil(data) {
+        return data.getDay() > this.DOMINGO && data.getDay() < this.SABADO; //Esse método vai me retornar uma booleana (true or false)
+    }
     criaNegociacao() {
         const exp = /-/g;
         const date = new Date(this.inputData.value.replace(exp, ','));
