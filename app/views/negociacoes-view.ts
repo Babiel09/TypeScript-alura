@@ -36,7 +36,7 @@ export class NegociacoesView extends View<Negociacoes> {
     //Diminuindo o tamnho do código:
     private formatarData(data: Date): string{
         return new Intl.DateTimeFormat().format(data);//Simplificando a parte da Data
-    }
+    };
 
     //Simplificando a parte da quantidade:
     private formatarQuantidade(quantidade:number): number{
