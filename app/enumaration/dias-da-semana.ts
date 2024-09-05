@@ -1,9 +1,9 @@
 export enum DiasDaSemana{
-    DOMINGO,    //0
-    SEGUNDA,    //1
-    TERÇA,      //2
-    QUARTA,     //3
-    QUINTA,     //4
-    SEXTA,      //5
-    SÁBADO      //6
+    DOMINGO= 0,    //0 DOMINGO
+    SEGUNDA = 1,    //1 SEGUNDA
+    TERÇA = 2 ,      //2 TERÇA
+    QUARTA = 3,     //3 QUARTA
+    QUINTA = 4,     //4 QUINTA
+    SEXTA = 5,      //5 SEXTA
+    SÁBADO = 6     //6 SÁBADO
 }

@@ -6,5 +6,5 @@ export var DiasDaSemana;
     DiasDaSemana[DiasDaSemana["QUARTA"] = 3] = "QUARTA";
     DiasDaSemana[DiasDaSemana["QUINTA"] = 4] = "QUINTA";
     DiasDaSemana[DiasDaSemana["SEXTA"] = 5] = "SEXTA";
-    DiasDaSemana[DiasDaSemana["S\u00C1BADO"] = 6] = "S\u00C1BADO"; //6
+    DiasDaSemana[DiasDaSemana["S\u00C1BADO"] = 6] = "S\u00C1BADO"; //6 SÁBADO
 })(DiasDaSemana || (DiasDaSemana = {}));
