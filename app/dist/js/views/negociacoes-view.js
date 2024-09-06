@@ -29,17 +29,14 @@ export class NegociacoesView extends View {
         </table>    
         `;
     }
-    //Diminuindo o tamnho do código:
     formatarData(data) {
-        return new Intl.DateTimeFormat().format(data); //Simplificando a parte da Data
+        return new Intl.DateTimeFormat().format(data);
     }
     ;
-    //Simplificando a parte da quantidade:
     formatarQuantidade(quantidade) {
         return quantidade;
     }
     ;
-    //Simplificando a parte do valor:
     formatarValor(valor) {
         return valor;
     }

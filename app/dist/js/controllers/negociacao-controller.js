@@ -16,7 +16,7 @@ export class NegociacaoController {
     ;
     adiciona() {
         const negociacao = Negociacao.criaDe(this.inputData.value, this.inputQuantidade.value, this.inputValor.value);
-        if (this.diaUtil(negociacao.data)) { //Aqui precisa pegar o valor da data para o código funcionar
+        if (this.diaUtil(negociacao.data)) {
             this.negociacoes.adiciona(negociacao);
             this.atualizaView();
             this.limparFormulario();
@@ -25,14 +25,12 @@ export class NegociacaoController {
         }
         else {
             this.mensagemView.update("Negociações só podem ser feitas em dias úteis.");
-            //Uso o update para facilitar meu processo
         }
         ;
     }
     ;
-    //Para tornar legível a parte do if, eu vou fazer:
     diaUtil(data) {
-        return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO; //Esse método vai me retornar uma booleana (true or false)
+        return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO;
     }
     limparFormulario() {
         this.inputData.value = '';
@@ -41,10 +39,9 @@ export class NegociacaoController {
         this.inputData.focus();
     }
     ;
-    //Método atualizaView chama o método update para todas as views:
     atualizaView() {
-        this.negociacoesView.update(this.negociacoes); //Dando update na view de negocios
-        this.mensagemView.update('Negociação adicionada com sucesso'); //Dando update na view de mensagem
+        this.negociacoesView.update(this.negociacoes);
+        this.mensagemView.update('Negociação adicionada com sucesso');
     }
     ;
 }
