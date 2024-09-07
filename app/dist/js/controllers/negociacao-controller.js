@@ -27,7 +27,7 @@ export class NegociacaoController {
             this.negociacoes.adiciona(negociacao);
             this.atualizaView();
             this.limparFormulario();
-            alert(202);
+            alert(201);
             return;
         }
         else {

@@ -1,11 +1,10 @@
 export function velocidadeDecorator():any{
     return function(
-        target: any, //O target é a função construtora em um método estático, Caso ele não estar em um método estático, ele vai ser um prototype
+        target: any, //O target é a função construtora em um método estático, Caso ele não estiver em um método estático, ele vai ser um prototype
         propertyKey: string,//Serve para pegar o nome do método.
         descriptor: PropertyDescriptor //Ele sabe de tudo do método que a gente quer executar.
     //O comportamento que eu quero ficará no descriptor
     ) {
-        //conevando o método original:
         const metodoOriginal = descriptor.value;
         //Começando a modificar o descriptor:
         descriptor.value = function(...args: Array<any>){ //O args transforma todos os parâmetros dos métodos em array
