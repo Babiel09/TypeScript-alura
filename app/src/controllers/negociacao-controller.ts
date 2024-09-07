@@ -3,6 +3,7 @@ import { Negociacoes } from '../models/negociacoes.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
 import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
+import { velocidadeDecorator } from '../decorator/decorator.js';
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
@@ -18,8 +19,9 @@ export class NegociacaoController {
         this.inputValor = <HTMLInputElement>document.querySelector('#valor');
         this.negociacoesView.update(this.negociacoes);
     };
-
+    @velocidadeDecorator()
     public adiciona(): void {
+        //Fazendo a mesma coisa para o adicona.
         const negociacao = Negociacao.criaDe(
             this.inputData.value,
             this.inputQuantidade.value,
@@ -32,9 +34,11 @@ export class NegociacaoController {
             alert(202)
             return; 
         }else{
+            alert("Negociações só podem ser feitas em dias úteis.")
             this.mensagemView.update("Negociações só podem ser feitas em dias úteis.");
             //Uso o update para facilitar meu processo
         };
+        
     };
     //Para tornar legível a parte do if, eu vou fazer:
     private diaUtil(data: Date): boolean{
