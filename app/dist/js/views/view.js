@@ -22,6 +22,6 @@ export class View {
     ;
 }
 __decorate([
-    velocidadeDecorator()
+    velocidadeDecorator(true)
 ], View.prototype, "update", null);
 ;

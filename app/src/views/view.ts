@@ -8,7 +8,7 @@ export abstract class View<T> {
     constructor(seletor: string, escapar?: boolean) {
         this.elemento = document.querySelector(seletor);
     };
-    @velocidadeDecorator()
+    @velocidadeDecorator(true)
     public update(model: T): void {
         //testando a performance do "update"no começo:
         let template = this.template(model);  

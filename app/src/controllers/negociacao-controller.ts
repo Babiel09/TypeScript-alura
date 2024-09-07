@@ -19,7 +19,7 @@ export class NegociacaoController {
         this.inputValor = <HTMLInputElement>document.querySelector('#valor');
         this.negociacoesView.update(this.negociacoes);
     };
-    @velocidadeDecorator()
+    @velocidadeDecorator(true)
     public adiciona(): void {
         //Fazendo a mesma coisa para o adicona.
         const negociacao = Negociacao.criaDe(

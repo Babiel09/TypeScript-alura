@@ -54,5 +54,5 @@ export class NegociacaoController {
     ;
 }
 __decorate([
-    velocidadeDecorator()
+    velocidadeDecorator(true)
 ], NegociacaoController.prototype, "adiciona", null);
