@@ -14,7 +14,8 @@ export class Negociacao {
         return data;
     };
 
-
+        //Um método estático mostra que todas as filhas da classe mãe "Negociacao" podem acessar o determinado método
+        //definido como estático.
     public static criaDe(dataString: string, quantidadeString: string, valorString:string): Negociacao{
         const exp = /-/g;
         const date = new Date(dataString.replace(exp, ','));
