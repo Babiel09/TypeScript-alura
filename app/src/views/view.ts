@@ -1,4 +1,5 @@
-import {velocidadeDecorator} from '../decorator/decorator.js'
+import { velocidadeDecorator } from "../decorator/execucao-decorator.js";
+import { inspecionarMetodo } from "../decorator/inspecionar.js";
 
 export abstract class View<T> {
 
@@ -9,6 +10,7 @@ export abstract class View<T> {
         this.elemento = document.querySelector(seletor);
     };
     @velocidadeDecorator(true)
+    @inspecionarMetodo()
     public update(model: T): void {
         //testando a performance do "update"no começo:
         let template = this.template(model);  
@@ -16,6 +18,7 @@ export abstract class View<T> {
             this.escapar = this.escapar;
         };
         this.elemento.innerHTML = template;
+
         //Testando a velocidade do "update" no fianl:
     };
 //Para fazer com que ninguém fora das filhas e/ou da mãe possa acessar o template para não o modificar, eu utilizo:

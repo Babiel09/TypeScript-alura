@@ -3,7 +3,8 @@ import { Negociacoes } from '../models/negociacoes.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
 import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
-import { velocidadeDecorator } from '../decorator/decorator.js';
+import { velocidadeDecorator } from '../decorator/execucao-decorator.js';
+import { inspecionarMetodo } from '../decorator/inspecionar.js';
 
 export class NegociacaoController {
     private inputData: HTMLInputElement;
@@ -20,6 +21,7 @@ export class NegociacaoController {
         this.negociacoesView.update(this.negociacoes);
     };
     @velocidadeDecorator(true)
+    @inspecionarMetodo()
     public adiciona(): void {
         //Fazendo a mesma coisa para o adicona.
         const negociacao = Negociacao.criaDe(

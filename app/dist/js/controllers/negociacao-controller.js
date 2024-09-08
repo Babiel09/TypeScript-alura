@@ -9,7 +9,8 @@ import { Negociacoes } from '../models/negociacoes.js';
 import { MensagemView } from '../views/mensagem-view.js';
 import { NegociacoesView } from '../views/negociacoes-view.js';
 import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
-import { velocidadeDecorator } from '../decorator/decorator.js';
+import { velocidadeDecorator } from '../decorator/execucao-decorator.js';
+import { inspecionarMetodo } from '../decorator/inspecionar.js';
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
@@ -54,5 +55,6 @@ export class NegociacaoController {
     ;
 }
 __decorate([
-    velocidadeDecorator(true)
+    velocidadeDecorator(true),
+    inspecionarMetodo()
 ], NegociacaoController.prototype, "adiciona", null);

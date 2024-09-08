@@ -10,9 +10,9 @@ export function velocidadeDecorator(emSegundos = true) {
         ;
         descriptor.value = function (...args) {
             const t1 = performance.now();
-            const metodoOriginal = (this, args);
+            metodoOriginal.apply(this, args);
             const t2 = performance.now();
-            console.log(`O método ${properKey}, demorou ${(t1 - t2) / divisor} ${unidade} para acontecer.`);
+            console.log(`O método ${properKey}, demorou ${(t2 - t1) / divisor} ${unidade} para acontecer.`);
         };
         return descriptor;
     };
