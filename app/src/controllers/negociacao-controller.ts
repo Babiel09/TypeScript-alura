@@ -47,6 +47,7 @@ export class NegociacaoController {
         return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO //Esse método vai me retornar uma booleana (true or false)
     }
     private limparFormulario(): void {
+        document.querySelector('#reiniciar')
         this.inputData.value = '';
         this.inputQuantidade.value = '';
         this.inputValor.value = '';
