@@ -11,14 +11,12 @@ import { NegociacoesView } from '../views/negociacoes-view.js';
 import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
 import { velocidadeDecorator } from '../decorator/execucao-decorator.js';
 import { inspecionarMetodo } from '../decorator/inspecionar.js';
+import { domInjector } from '../decorator/dom-injector.js';
 export class NegociacaoController {
     constructor() {
         this.negociacoes = new Negociacoes();
         this.negociacoesView = new NegociacoesView('#negociacoesView', true);
         this.mensagemView = new MensagemView('#mensagemView');
-        this.inputData = document.querySelector('#data');
-        this.inputQuantidade = document.querySelector('#quantidade');
-        this.inputValor = document.querySelector('#valor');
         this.negociacoesView.update(this.negociacoes);
     }
     ;
@@ -55,6 +53,15 @@ export class NegociacaoController {
     }
     ;
 }
+__decorate([
+    domInjector('#data')
+], NegociacaoController.prototype, "inputData", void 0);
+__decorate([
+    domInjector('#quantidade')
+], NegociacaoController.prototype, "inputQuantidade", void 0);
+__decorate([
+    domInjector('#valor')
+], NegociacaoController.prototype, "inputValor", void 0);
 __decorate([
     velocidadeDecorator(true),
     inspecionarMetodo()
