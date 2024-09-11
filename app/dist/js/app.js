@@ -11,3 +11,13 @@ else {
     throw Error("Seu código possui um erro!");
 }
 ;
+const importar = document.querySelector('#botãoimportador');
+if (importar) {
+    importar.addEventListener('click', () => {
+        controller.importarDados();
+    });
+}
+else {
+    throw Error("Algo deu errado, verifique seu código.");
+}
+;

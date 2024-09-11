@@ -6,6 +6,7 @@ import { DiasDaSemana } from '../enumaration/dias-da-semana.js';
 import { velocidadeDecorator } from '../decorator/execucao-decorator.js';
 import { inspecionarMetodo } from '../decorator/inspecionar.js';
 import { domInjector } from '../decorator/dom-injector.js';
+import { NegociacoesServices } from '../services/servicos-api.js';
 
 export class NegociacaoController {
     @domInjector('#data')
@@ -17,6 +18,7 @@ export class NegociacaoController {
     private negociacoes = new Negociacoes();
     private negociacoesView = new NegociacoesView('#negociacoesView', true);
     private mensagemView = new MensagemView('#mensagemView');
+    private servicos = new NegociacoesServices();
 
     constructor() {
         this.negociacoesView.update(this.negociacoes);
@@ -46,13 +48,15 @@ export class NegociacaoController {
     //Para tornar legível a parte do if, eu vou fazer:
     private diaUtil(data: Date): boolean{
         return data.getDay() > DiasDaSemana.DOMINGO && data.getDay() < DiasDaSemana.SABADO //Esse método vai me retornar uma booleana (true or false)
-    }
+    };
     private limparFormulario(): void {
         document.querySelector('#reiniciar')
         this.inputData.value = '';
         this.inputQuantidade.value = '';
         this.inputValor.value = '';
         this.inputData.focus();
+        this.mensagemView.update('Negociação reiniciada');
+
     };
 
         //Método atualizaView chama o método update para todas as views:
@@ -61,4 +65,15 @@ export class NegociacaoController {
             this.mensagemView.update('Negociação adicionada com sucesso');       //Dando update na view de mensagem
     
         };
-}
+
+
+        public importarDados():void {
+            this.servicos.obterNegociacoes()
+            .then(negociosDeHoje=>{
+                for(let negociacao of negociosDeHoje) [
+                    this.negociacoes.adiciona(negociacao)
+                ]
+                this.negociacoesView.update(this.negociacoes);
+            })
+        };
+};
