@@ -56,6 +56,16 @@ export class NegociacaoController {
         this.mensagemView.update('Negociação adicionada com sucesso');
     }
     ;
+    paraTexto() {
+        return `
+            Data: ${this.inputData.value}.
+            Quantidade: ${this.inputQuantidade.value}.
+            Valor: ${this.inputValor.value}
+
+            
+            `;
+    }
+    ;
     importarDados() {
         this.servicos.obterNegociacoes()
             .then(negociosDeHoje => {
@@ -82,3 +92,4 @@ __decorate([
     inspecionarMetodo()
 ], NegociacaoController.prototype, "adiciona", null);
 ;
+//# sourceMappingURL=negociacao-controller.js.map

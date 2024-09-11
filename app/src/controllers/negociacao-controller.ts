@@ -65,6 +65,15 @@ export class NegociacaoController {
             this.mensagemView.update('Negociação adicionada com sucesso');       //Dando update na view de mensagem
     
         };
+        public paraTexto():string{
+            return `
+            Data: ${this.inputData.value}.
+            Quantidade: ${this.inputQuantidade.value}.
+            Valor: ${this.inputValor.value}
+
+            
+            `
+        };  
 
 
         public importarDados():void {

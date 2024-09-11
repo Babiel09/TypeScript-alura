@@ -12,3 +12,4 @@ export class NegociacoesServices {
     }
 }
 ;
+//# sourceMappingURL=servicos-api.js.map

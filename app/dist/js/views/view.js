@@ -27,3 +27,4 @@ __decorate([
     inspecionarMetodo()
 ], View.prototype, "update", null);
 ;
+//# sourceMappingURL=view.js.map

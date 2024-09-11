@@ -10,4 +10,5 @@ export class Negociacoes {
     lista(): readonly Negociacao[] {
         return this.negociacoes;
     }
+
 }

@@ -17,3 +17,4 @@ export function velocidadeDecorator(emSegundos = true) {
         return descriptor;
     };
 }
+//# sourceMappingURL=execucao-decorator.js.map
